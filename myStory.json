@@ -1,58 +1,226 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "Return",
+    "Credits": "Created by Cameron Coleman (caetcole@ucsc.edu).",
+    "InitialLocation": "Start2",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Start2": {
+            "Body": "You return in a flash; the time machine worked! The Professor's a genius! Now you just need to find her... \nbut wait, you're right where you left and she's nowhere in sight.",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
+                    "Text": "Look around",
+                    "Target": "Hub"
                 }
             ]
         },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
+        "Hub": {
+            "Body": "You get your bearings, and it's the same old office of hers. Her computer terminal and desk is in the corner, the door is behind you, and for whatever reason you're drawn to the eye-level air duct.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Crawl through the Air Ducts?",
+                    "Target": "Air Duct"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
-                }
-            ]
-        },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Open the Door?",
+                    "Target": "Door"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "Take a look at the Professor's Terminal?",
+                    "Target": "Terminal"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "Door": {
+            "Body": "",
+            "Choices": [
+            ]
+        },
+        "Air Duct": {
+            "Body": "You crawl through, and it's really musty in here. Surprisingly spacious though.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Text": "Continue Forward?",
+                    "Target": "Air Duct Cycle Start"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "It's too dark for me!",
+                    "Target": "Hub"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "Air Duct Cycle Start": {
+            "Body": "You continue forward, noting an even more obnoxious smell. Nothing else of note.",
+            "Choices": [
+                {
+                    "Text": "Keep going?",
+                    "Target": "Air Duct Cycle 2"
+                }
+            ]
+        },
+        "Air Duct Cycle 2": {
+            "scene": "AirDuct",
+            "Body": "'One foot... over the other' you sing miserably. Not an end in sight.",
+            "Choices": [
+                {
+                    "Text": "When will it end?",
+                    "Target": "Air Duct Cycle 3"
+                },
+                {
+                    "Text": "Wait is there something in the corner over there?",
+                    "Target": "Air Duct End"
+                }
+
+            ]
+        },
+        "Air Duct Cycle 3": {
+            "Body": "Your sisyphean crawl continues, with only empty duct remaining.",
+            "Choices": [
+                {
+                    "Text": "Maybe one more right turn?",
+                    "Target": "Failed Duct"
+                }
+            ]
+        },
+        "Failed Duct": {
+            "Body": "You turn and fall straight from the ceiling onto the same spot you time traveled back to! \nYou look up in wonder and note there isn't actually a duct in the ceiling... weird.",
+            "Choices": [
+                {
+                    "Text": "Better luck this time?",
+                    "Target": "Hub"
+                }
+            ]
+        },
+        "Successful Duct": {
+            "Body": "You turn and fall straight from the ceiling onto the same spot you time traveled back to! \nYou look up in wonder and note there isn't actually a duct in the ceiling... weird.",
+            "Choices": [
+                {
+                    "Text": "Better get that USB in the desk",
+                    "Target": "Hub"
+                }
+            ]
+        },
+        "Air Duct EndS": {
+            "Body": "You look a little closer and... there IS something there!",
+            "Choices": [
+                {
+                    "Text": "Pick it up",
+                    "Target": "USB"
+                }
+            ]
+        },
+        "USB": {
+            "Body": "It's a USB! 'I bet it can open the professor's desk!' you think to yourself.",
+            "Choices": [
+                {
+                    "Text": "Take it with you",
+                    "Target": "Successful Duct"
+                }
+            ]
+        },
+        "Terminal": {
+            "scene": "Terminal",
+            "Body": "It's her oversized terminal. Underneath it is her desk, that thing has all her stuff, maybe even a spare key? \nAnd hey, it looks like something is playing on the monitor!",
+            "Choices": [
+                {
+                    "Text": "It looks like a Livestream?",
+                    "Target": "Livestream"
+                },
+                {
+                    "Text": "No time for distractions, open that desk!",
+                    "Target": "Desk"   
+                },
+                {
+                    "Text": "Go back to the spot you appeared at",
+                    "Target": "Hub"   
+                },
+                {
+                    "Text": "Slot in the USB",
+                    "Target": "UseUSB"
+                }
+            ]
+            
+        },
+        "UseUSB": {
+            "Body": "It's her oversized terminal. Underneath it is her desk, that thing has all her stuff, maybe even a spare key? \nAnd hey, it looks like something is playing on the monitor!",
+            "Choices": [
+                {
+                    "Text": "It looks like a Livestream?",
+                    "Target": "Livestream"
+                },
+                {
+                    "Text": "No time for distractions, open that desk!",
+                    "Target": "Desk"   
+                },
+                {
+                    "Text": "Go back to the spot you appeared at",
+                    "Target": "Hub"   
+                }
+            ]
+        },
+        "Livestream": {
+            "Body": "It's a couple of attractive men talking about nonsense. 'I lost my keys so I had to look in every corner. You guys should try it sometimes.' \nDespite the dumb, simplistic story, you think to yourself 'did I try that?'",
+            "Choices": [
+                {
+                    "Text": "Stop listening",
+                    "Target": "Terminal"
+                }
+            ]
+        },
+        "Desk": {
+            "Body": "",
+            "Choices": [
+                {
+                    "Text": "",
+                    "Target": "Key"
+                }
+            ]
+        },
+        "Key": {
+            "Body": "You plug in the USB and the desk pops open a second later as the terminal processes. Finally! You spot a big shiny key.",
+            "Choices": [
+                {
+                    "Text": "Take it!",
+                    "Target": "Terminal"
+                }
+            ]
+        },
+        "Nope1": {
+            "Body": "You turn the handle... and it's locked. Why on Earth would she lock the door from the inside?",
+            "Choices": [
+                {
+                    "Text": "Come back later?",
+                    "Target": "Hub"
+                }
+            ]
+        },
+        "Nope2": {
+            "Body": "'Yeah right, good luck getting into that desk without the code the Professor runs from the terminal to unlock it' you mutter.",
+            "Choices": [
+                {
+                    "Text": "Oh well",
+                    "Target": "Terminal"
+                }
+            ]
+        },
+        "Nope3": {
+            "Body": "You barely have to think about it for a moment:",
+            "Choices": [
+                {
+                    "Text": "'Eh, who's got time to search in corners?'",
+                    "Target": "Air Duct Cycle 2"
+                }
+            ]
+        },
+        "EndS": {
+            "Body": "You turn the key with haste and throw the door open... only to bump into the Professor! Turns out she was just on her way in... no need to do all that. \nShe's beaming with excitement on your time travelling, and you can't wait to tell her...",
+            "Choices": [
+                {
+                    "Text": "Fade to white",
+                    "Target": "End"
+                }
+            ]
+        },
+        "End": {
+            "Body": "Thanks for playing!"
         }
     }
 }
